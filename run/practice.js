@@ -22,7 +22,7 @@ module.exports = (MyGame, previousRead) => {
             k = -1;
             while(k < newGame.numPlayers - 1 && condition === WinCondition.NOWIN) { // weird for loop to save i outside of scope
                 k++;
-                const turn = newGame.getTurn(k);
+                const turn = newGame.getTurn(k, previousRead, true);
                 newGame.takeTurn(turn, k);
                 playersData[k].push(newGame.JSONFromGamestate(k));
                 condition = newGame.checkWin();

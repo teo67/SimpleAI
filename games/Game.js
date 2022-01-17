@@ -26,12 +26,9 @@ class Game {
         }
     }
 
-    getTurn(playerNum, data = null) { // returns a gamestate that is valid to move to
+    getTurn(playerNum, data, random = true) { // returns a gamestate that is valid to move to
         const allPossible = [];
         this.oneOption(allPossible, {}, 0, playerNum);
-        if(data === null) {
-            return allPossible[Math.floor(Math.random() * allPossible.length)]; // turn obj
-        }
         let highest = null;
         let highestPercent = -1;
         for(const turn of allPossible) {
@@ -44,7 +41,7 @@ class Game {
                 }
             }
         }
-        if(highestPercent == -1) {
+        if(highestPercent == -1 || (random && Math.random() <= 0.2)) {
             return allPossible[Math.floor(Math.random() * allPossible.length)];
         }
         return highest; // turn obj

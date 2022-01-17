@@ -53,7 +53,7 @@ module.exports = (MyGame, previousRead) => {
             break;
         }
         currentPlayer = ['AI', AIData];
-        const turn = newGame.getTurn(1, previousRead);
+        const turn = newGame.getTurn(1, previousRead, false);
         newGame.takeTurn(turn, 1);
         AIData.push(newGame.JSONFromGamestate(1));
         condition = newGame.checkWin();
