@@ -1,7 +1,7 @@
 To run, use node js ('node .').
 You'll be asked to enter the name of the game, and you'll have an option to train the AI against itself or play a real game. 
 To make a game, simply create a folder in the 'games' directory with a js file with the same name. 
-The js file should export a class that exports some version of the Game class (for example, SimpleBoardGame helps with makes 2d board games).
+The js file should export a class that extends some version of the Game class (for example, SimpleBoardGame helps with makes 2d board games).
 When training, data will automatically save to a json file in your game folder ('data.json').
 The package currently contains:
  - ExampleGame:
